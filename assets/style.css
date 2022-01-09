@@ -22,6 +22,15 @@ body {
   padding-left: 20px;
   padding-right: 20px;
 }
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline;
+}
 
 header {
   text-align: center;
