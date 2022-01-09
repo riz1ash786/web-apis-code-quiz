@@ -97,8 +97,9 @@ button[disabled] {
     padding: 10px 15px;
   }
 
-@media (max-width: 500px) {
-  .btn {
-    font-size: 0.8rem;
+  @media (max-width: 500px) {
+    .btn {
+      font-size: 0.8rem;
+    }
   }
 }
