@@ -6,7 +6,7 @@
 
 html,
 body,
-.wrapper {
+.container {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@ body {
   background-color: #f9fbfd;
 }
 
-.wrapper {
+.container {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
@@ -56,11 +56,11 @@ header {
   min-height: 100px;
 }
 
-.card-footer {
+.quiz-footer {
   text-align: center;
 }
 
-.card-footer::before {
+.quiz-footer::before {
   content: " ";
   display: block;
   width: 100%;
@@ -68,13 +68,13 @@ header {
   height: 2px;
 }
 
-.card-footer::after {
+.quiz-footer::after {
   content: " ";
   display: block;
   clear: both;
 }
 
-.btn {
+.start-btn {
   border: none;
   background-color: rgb(20, 150, 68);
   border-radius: 5px;
@@ -90,6 +90,37 @@ header {
   cursor: pointer;
 }
 
+.start-btn:hover {
+  color: #bd6925;
+  opacity: 85%;
+}
+
+h2 {
+  font-size: 22px;
+}
+.answers-container {
+  display: inline-block;
+}
+
+.answers-container-answer {
+  padding: 5px 10px 5px 5px;
+  background-color: rgba(241, 10, 10, 0.7);
+  border: 1px solid rgb(0, 0, 0);
+  cursor: pointer;
+  font-size: 22px;
+}
+.answers-container-answer:hover {
+  color: #bd6925;
+  opacity: 85%;
+}
+
+.quiz-results {
+  font-size: 24px;
+  width: 82vw;
+  color: rgb(235, 6, 174);
+  font-weight: bolder;
+}
+
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
@@ -100,14 +131,14 @@ button[disabled] {
 }
 
 @media (max-width: 690px) {
-  .btn {
+  .start-btn {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
   }
 
   @media (max-width: 500px) {
-    .btn {
+    .start-btn {
       font-size: 0.8rem;
     }
   }
