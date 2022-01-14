@@ -5,9 +5,6 @@ var answers_container = document.querySelector(".answerBox");
 var check = document.querySelectorAll(".answerBoxOptions");
 var quiz_question = document.querySelector("h2");
 var question_number = document.querySelector("h3");
-var quiz_score = document.querySelector("h2");
-var question_score = document.querySelector("h3");
-var question_score = document.querySelector("h3");
 var image = document.querySelector(".quizImage");
 var resultDescription = document.querySelector(".quizResults");
 
@@ -16,21 +13,97 @@ let Score = 0;
 
 var questions = [
   {
-    question: "What does HTML stand for?",
-    answers: ["Hypertext Markup Language", "Blah", "Blah2"],
-    correctAnswerIndex: 0,
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: [
+      { text: "<javascript>", correct: false },
+      { text: "<js>", correct: false },
+      { text: "<script>", correct: true },
+      { text: "<scripting>", correct: false },
+    ],
   },
   {
-    question: "Who is the true formula1 champion of 2021?",
-    answers: ["Hamilton", "Lewis Hamilton", "Lewis", "Team44"],
-    correctAnswerIndex: 2,
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: [
+      { text: "<javascript>", correct: false },
+      { text: "<js>", correct: false },
+      { text: "<script>", correct: true },
+      { text: "<scripting>", correct: false },
+    ],
   },
   {
-    question: "How many days are there in week?",
-    answers: ["4", "8", "5", "7"],
-    correctAnswerIndex: 3,
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: [
+      { text: "<javascript>", correct: false },
+      { text: "<js>", correct: false },
+      { text: "<script>", correct: true },
+      { text: "<scripting>", correct: false },
+    ],
+  },
+  {
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: [
+      { text: "<javascript>", correct: false },
+      { text: "<js>", correct: false },
+      { text: "<script>", correct: true },
+      { text: "<scripting>", correct: false },
+    ],
+  },
+  {
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: [
+      { text: "<javascript>", correct: false },
+      { text: "<js>", correct: false },
+      { text: "<script>", correct: true },
+      { text: "<scripting>", correct: false },
+    ],
+  },
+  {
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: [
+      { text: "<javascript>", correct: false },
+      { text: "<js>", correct: false },
+      { text: "<script>", correct: true },
+      { text: "<scripting>", correct: false },
+    ],
+  },
+  {
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: [
+      { text: "<javascript>", correct: false },
+      { text: "<js>", correct: false },
+      { text: "<script>", correct: true },
+      { text: "<scripting>", correct: false },
+    ],
+  },
+  {
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: [
+      { text: "<javascript>", correct: false },
+      { text: "<js>", correct: false },
+      { text: "<script>", correct: true },
+      { text: "<scripting>", correct: false },
+    ],
+  },
+  {
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: [
+      { text: "<javascript>", correct: false },
+      { text: "<js>", correct: false },
+      { text: "<script>", correct: true },
+      { text: "<scripting>", correct: false },
+    ],
+  },
+  {
+    question: "Inside which HTML element do we put the JavaScript?",
+    answers: [
+      { text: "<javascript>", correct: false },
+      { text: "<js>", correct: false },
+      { text: "<script>", correct: true },
+      { text: "<scripting>", correct: false },
+    ],
   },
 ];
+
 button.addEventListener("click", () => {
   quizInfo.style.display = "none";
   button.style.display = "none";
@@ -42,10 +115,23 @@ var clearQuestion = () => {
   answers_container.innerHTML = "";
 };
 var renderNextQuestion = (i) => {
-  question_number.textContent = `Question ${i + 1}/3`;
+  question_number.textContent = `Question ${i + 1}/10`;
   quiz_question.textContent = questions[i].question;
-};
-var renderNextQuestion = (i) => {
-  question_score.textContent = `Score ${i + 1}/3`;
-  quiz_score.textContent = questions[i].question;
+
+  questions[i].answers.forEach((answer) => {
+    var answer_text = document.createElement("p");
+    answer_text.classList.add("answerBoxOptions");
+    answer_text.textContent = answer.text;
+    if (answer.correct) {
+      answer_text.dataset.correct = answer.correct;
+    }
+    answers_container.append(answer_text);
+  });
+
+  currentQuestion++;
+  document.querySelectorAll(".answerBoxOptions").forEach((answer) =>
+    answer.addEventListener("click", (e) => {
+      if (e.target.dataset.correct) Score++;
+    })
+  );
 };
