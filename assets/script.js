@@ -1,11 +1,12 @@
 var quiz = document.querySelector(".quiz");
 var button = document.querySelector(".quizStartButton");
 var quizInfo = document.querySelector(".quizCard");
-var answers_container = document.querySelector(".answerBox");
+var answersContainer = document.querySelector(".answerBox");
 var check = document.querySelectorAll(".answerBoxOptions");
-var quiz_question = document.querySelector("h3");
-var question_number = document.querySelector("h2");
+var quizQuestion = document.querySelector("h3");
+var questionNumber = document.querySelector("h2");
 var resultDescription = document.querySelector(".quizResults");
+var countdown = document.getElementById("countdown");
 
 let currentQuestion = 0;
 let Score = 0;
@@ -111,6 +112,17 @@ var questions = [
   },
 ];
 
+function timer() {
+  var sec = 30;
+  var timer = setInterval(function () {
+    document.getElementById("countdown").innerHTML = "00:" + sec;
+    sec--;
+    if (sec < 0) {
+      clearInterval(timer);
+    }
+  }, 1000);
+}
+
 button.addEventListener("click", () => {
   quizInfo.style.display = "none";
   button.style.display = "none";
@@ -118,12 +130,12 @@ button.addEventListener("click", () => {
   renderNextQuestion(currentQuestion);
 });
 var clearQuestion = () => {
-  quiz_question.textContent = "";
-  answers_container.innerHTML = "";
+  quizQuestion.textContent = "";
+  answersContainer.innerHTML = "";
 };
 var renderNextQuestion = (i) => {
-  question_number.textContent = `Question ${i + 1}/10`;
-  quiz_question.textContent = questions[i].question;
+  questionNumber.textContent = `Question ${i + 1}/10`;
+  quizQuestion.textContent = questions[i].question;
 
   questions[i].answers.forEach((answer) => {
     var answer_text = document.createElement("p");
@@ -132,7 +144,7 @@ var renderNextQuestion = (i) => {
     if (answer.correct) {
       answer_text.dataset.correct = answer.correct;
     }
-    answers_container.append(answer_text);
+    answersContainer.append(answer_text);
   });
 
   currentQuestion++;
@@ -143,8 +155,8 @@ var renderNextQuestion = (i) => {
       if (currentQuestion < questions.length)
         renderNextQuestion(currentQuestion);
       if (document.querySelector(".answerBox").childElementCount === 0) {
-        question_number.style.display = "none";
-        quiz_question.textContent = `Score: ${Score}`;
+        questionNumber.style.display = "none";
+        quizQuestion.textContent = `Score: ${Score}`;
         Score <= 7
           ? (resultDescription.textContent =
               "Oh dear, you've got some brushing up to do. Better luck next time!")
