@@ -41,8 +41,8 @@ h2 {
 
 h3 {
   font-size: 24px;
-  color: #0756a0;
-  margin-top: 1rem;
+  color: #a0074e;
+  margin-top: 0.8rem;
 }
 .quizCard {
   background-color: hsl(0, 0%, 100%);
@@ -55,6 +55,7 @@ h3 {
   max-width: 800px;
   padding: 30px 40px;
   text-align: center;
+  border-radius: 15px;
 }
 .quizHomescreenStatement {
   margin-bottom: 1rem;
@@ -63,6 +64,7 @@ h3 {
 .quizStartButton {
   border: none;
   background-color: rgb(20, 150, 68);
+  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
   color: hsl(0, 0%, 100%);
@@ -74,6 +76,12 @@ h3 {
   text-align: center;
   cursor: pointer;
 }
+.quizStartButton:hover {
+  background-color: #f87219;
+  opacity: 85%;
+  transform: scale(1.1);
+}
+
 .quiz {
   display: none;
 }
@@ -83,6 +91,7 @@ h3 {
 .answerBoxOptions {
   border: none;
   background-color: rgb(20, 150, 68);
+  border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
   color: hsl(0, 0%, 100%);
@@ -94,14 +103,24 @@ h3 {
   text-align: center;
   cursor: pointer;
 }
+.answerBoxOptions:hover {
+  background-color: #f87219;
+  opacity: 85%;
+  transform: scale(1.1);
+}
 .quizResults {
-  font-size: 30px;
+  font-size: 40px;
   width: 100%;
-  color: rgb(49, 62, 203);
+  color: #a0074e;
   font-weight: bold;
   text-align: center;
 }
 .quizHomescreenImage {
   width: 450px;
   height: 250px;
+  border-radius: 15px;
+}
+.quizImage {
+  width: 150px;
+  height: 100px;
 }
