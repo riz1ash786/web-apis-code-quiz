@@ -1,5 +1,5 @@
 var quiz = document.querySelector(".quiz");
-var button = document.querySelector(".quizStartButton");
+var startButton = document.querySelector(".quizStartButton");
 var quizInfo = document.querySelector(".quizCard");
 var answersContainer = document.querySelector(".answerBox");
 var check = document.querySelectorAll(".answerBoxOptions");
@@ -10,6 +10,7 @@ var countdown = document.getElementById("countdown");
 
 let currentQuestion = 0;
 let Score = 0;
+let timerValue = 5;
 
 var questions = [
   {
@@ -112,21 +113,24 @@ var questions = [
   },
 ];
 
-function timer() {
-  var sec = 30;
-  var timer = setInterval(function () {
-    document.getElementById("countdown").innerHTML = "00:" + sec;
-    sec--;
-    if (sec < 0) {
-      clearInterval(timer);
-    }
-  }, 1000);
-}
+var startTimer = () => {
+  var timerTick = () => {
+    timerValue -= 1;
+    countdown.textContent = timerValue;
 
-button.addEventListener("click", () => {
+    if (timerValue === 0) {
+      clearInterval(timer);
+      console.log("gameOver");
+    }
+  };
+  var timer = setInterval(timerTick, 1000);
+};
+
+startButton.addEventListener("click", () => {
   quizInfo.style.display = "none";
-  button.style.display = "none";
+  startButton.style.display = "none";
   quiz.style.display = "block";
+  startTimer();
   renderNextQuestion(currentQuestion);
 });
 var clearQuestion = () => {
@@ -157,12 +161,23 @@ var renderNextQuestion = (i) => {
       if (document.querySelector(".answerBox").childElementCount === 0) {
         questionNumber.style.display = "none";
         quizQuestion.textContent = `Score: ${Score}`;
-        Score <= 7
-          ? (resultDescription.textContent =
-              "Oh dear, you've got some brushing up to do. Better luck next time!")
-          : (resultDescription.textContent =
-              "Wow! You did a great job on this quiz, keep up the good work and well done!");
+
+        if (Score <= 7) {
+          resultDescription.textContent =
+            "Oh dear, you've got some brushing up to do. Better luck next time!";
+        } else {
+          resultDescription.textContent =
+            "Wow! You did a great job on this quiz, keep up the good work and well done!";
+        }
       }
     })
   );
 };
+
+// for loops
+// appending elements to html via js
+// es5 functions
+// arrays and objects
+// template strings
+// chnaging html text via js
+// differences between es5 and es6 functions
