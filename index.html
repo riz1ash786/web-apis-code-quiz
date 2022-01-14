@@ -11,28 +11,42 @@
     <div class="container">
       <nav>
         <ul>
-          <li><a href="high-scores">High Scores</a></li>
-          <li id="countdown"></li>
-        </ul>
-      </nav>
-      <header>
-        <h1>Coding Quiz Challenge</h1>
-      </header>
-      <div class="card">
-        <p>
-            Try to answer the following code-related questions within the time
-            limit. Keep in mind that incorrect answers will penalise your
-            scoretime by ten seconds! Good luck!
-          </p>
-      </div>
-        <div class="quiz-footer">
-          <button id="startQuiz" class="start-btn">Start Quiz</button>
-          <h2></h2>
-          <div class="answers-container"></div>
-          <p class="quiz-results"></p>
-        </div>
-      </div>
-    </div>
-    <script src="./assets/script.js"></script>
-  </body>
-</html>
+            <ul>
+                <li><a href="highScores">High Scores</a></li>
+                <li id="countdown">00:00</li>
+              </ul>
+            </nav>
+            <div class="container">
+              <div class="main">
+                <h1>Coding Quiz Challenge</h1>
+                <div class="quizCard">
+                  <img
+                    src="./images/js-quiz.jpeg"
+                    alt="JS Quiz image"
+                    class="quizHomescreenImage"
+                  />
+                  <p class="quizHomescreenStatement">
+                    Try to answer the following code-related questions within the time
+                    limit. You will score 1 point for each correct anser but keep in
+                    mind that incorrect answers will penalise your scoretime by ten
+                    seconds! Good luck!
+                  </p>
+                </div>
+                <button class="quizStartButton">Start Quiz</button>
+                <div class="quiz">
+                  <h3></h3>
+                  <img
+                    src="./images/laptop-cogs.png"
+                    alt="laptop-cogs"
+                    class="quizImage"
+                  />
+                  <h2></h2>
+                  <div class="answerBox"></div>
+                  <p class="quizResults"></p>
+                </div>
+              </div>
+            </div>
+          </main>
+          <script src="./assets/script.js"></script>
+        </body>
+      </html>
