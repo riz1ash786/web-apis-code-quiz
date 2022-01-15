@@ -138,7 +138,7 @@ startButton.addEventListener("click", () => {
 });
 
 function startTimer() {
-  var sec = 10;
+  var sec = 50;
   var timer = setInterval(function () {
     document.getElementById("countdown").innerHTML = sec--;
     if (sec < 0) {
