@@ -5,12 +5,12 @@ var answersContainer = document.querySelector(".answerBox");
 var check = document.querySelectorAll(".answerBoxOptions");
 var quizQuestion = document.querySelector("h3");
 var questionNumber = document.querySelector("h2");
-var resultDescription = document.querySelector(".quizResults");
+var resultResponse = document.querySelector(".quizResults");
 var countdown = document.getElementById("countdown");
 
 let currentQuestion = 0;
 let Score = 0;
-let timerValue = 5;
+// let timerValue = 60;
 
 var questions = [
   {
@@ -112,19 +112,22 @@ var questions = [
     ],
   },
 ];
+// es6 functions for timer, call function added to eventlistener
+// var startTimer = () => {
+//   var timerTick = () => {
+//     timerValue -= 1;
+//     countdown.textContent = timerValue;
 
-var startTimer = () => {
-  var timerTick = () => {
-    timerValue -= 1;
-    countdown.textContent = timerValue;
+//     if (timerValue === 0) {
+//       clearInterval(timer);
+//       alert("You're out of time. Game Over!");
+//     }
+//   };
+//   var timer = setInterval(timerTick, 1000);
+// };
 
-    if (timerValue === 0) {
-      clearInterval(timer);
-      console.log("gameOver");
-    }
-  };
-  var timer = setInterval(timerTick, 1000);
-};
+// set an empty array in local storage called highscore
+// when highscore  page is viewed get "highscore" array from local storage
 
 startButton.addEventListener("click", () => {
   quizInfo.style.display = "none";
@@ -133,6 +136,18 @@ startButton.addEventListener("click", () => {
   startTimer();
   renderNextQuestion(currentQuestion);
 });
+
+function startTimer() {
+  var sec = 10;
+  var timer = setInterval(function () {
+    document.getElementById("countdown").innerHTML = sec--;
+    if (sec < 0) {
+      clearInterval(timer);
+      alert("You're out of time. Game Over!");
+    }
+  }, 1000);
+}
+
 var clearQuestion = () => {
   quizQuestion.textContent = "";
   answersContainer.innerHTML = "";
@@ -153,8 +168,8 @@ var renderNextQuestion = (i) => {
 
   currentQuestion++;
   document.querySelectorAll(".answerBoxOptions").forEach((answer) =>
-    answer.addEventListener("click", (e) => {
-      if (e.target.dataset.correct) Score++;
+    answer.addEventListener("click", (event) => {
+      if (event.target.dataset.correct) Score++;
       clearQuestion();
       if (currentQuestion < questions.length)
         renderNextQuestion(currentQuestion);
@@ -163,16 +178,26 @@ var renderNextQuestion = (i) => {
         quizQuestion.textContent = `Score: ${Score}`;
 
         if (Score <= 7) {
-          resultDescription.textContent =
+          resultResponse.textContent =
             "Oh dear, you've got some brushing up to do. Better luck next time!";
         } else {
-          resultDescription.textContent =
+          resultResponse.textContent =
             "Wow! You did a great job on this quiz, keep up the good work and well done!";
         }
       }
     })
   );
 };
+
+function renderHighscores() {
+  clearScreen();
+
+  var highscores = localStorage.getItem("highscores");
+
+  if (highscores) {
+    var parsedHighscores = JSON.parsel(highscores);
+  }
+}
 
 // for loops
 // appending elements to html via js

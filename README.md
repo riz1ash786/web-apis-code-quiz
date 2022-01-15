@@ -6,15 +6,15 @@
 
 ## Acceptance Criteria - Checklist
 
-<!-- - When the 'Generate Password' button is clicked a prompt appears asking the user to select a password length between 8-128 characters. -->
+- the quiz starts when the start button is clicked and clears the content to initialise the fist question and response options for the user.
 
-<!-- - Once the user has input an integer between 8-128 the prompts cycle through the criteria asking the user if they would like lowercase, uppercase, numbers and special characters in their password. -->
+- The timer also starts when the user commences the quiz and is displayed throughout the quiz
 
-<!-- - If the user enters an integer that is not between 8-128 they will be presented with a prompt alerting them, it will return a false and the criteria prompts will not show. -->
+- Upon completion of the timer an alert appears informing the user that they are out of time and the quiz returns to the start once the user has acknowledged the alert.
 
-<!-- - 'Else' statment in place as part of error handling if user selects a length but does not select a true option for any of the letter, symbols and number criteria. -->
+- The timer also resets at this stage
 
-<!-- - Dependent on the users input a password will successfully generate in accordance to the selections made by the user. -->
+- If the user scores atleast 7 correct answers out of 10 they are rewarded with a 'well done' message upon completion of the quiz and if they score 6 or less correct answers then the user is displayed a'better luck next time message.'
 
 ---
 
