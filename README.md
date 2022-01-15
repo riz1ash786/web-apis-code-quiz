@@ -6,7 +6,7 @@
 
 ## Acceptance Criteria - Checklist
 
-- the quiz starts when the start button is clicked and clears the content to initialise the fist question and response options for the user.
+- the quiz starts when the start button is clicked and clears the content to initialise the first question and response options for the user.
 
 - The timer also starts when the user commences the quiz and is displayed throughout the quiz
 
@@ -14,21 +14,21 @@
 
 - The timer also resets at this stage
 
-- If the user scores atleast 7 correct answers out of 10 they are rewarded with a 'well done' message upon completion of the quiz and if they score 6 or less correct answers then the user is displayed a'better luck next time message.'
+- If the user scores at least 7 correct answers out of 10 they are rewarded with a 'well done' message upon completion of the quiz and if they score 6 or less correct answers then the user is displayed the message 'better luck next time'.
 
-- Upon completion of the quiz a final score is diaplayed
+- Upon completion of the quiz a final score is displayed
 
 ---
 
 ## 'To do list' action plan (tasks i need to work on to complete my homework)
 
-- Unfortunately I was unable to complete this homework and consequently unable to meet the homework criteria as well as my own personal expectations.
+- Unfortunately, I was unable to complete this homework and consequently unable to meet the homework criteria as well as my own personal expectations.
 
-- My intentions is to immprove my timer function to subtract time from the clock upon submission of an incorrect reeponse from the user.
+- I intend to improve my timer function to subtract additonal time from the clock upon submission of an incorrect response from the user.
 
-- I also need to utilise my own code to improve the functionality of the quiz and introduce es5 functions in vanila javascript to understand the concepts better.
+- I also need to utilise my own code to improve the functionality of the quiz and introduce es5 functions in vanilla JavaScript to understand the concepts better. My intention here was to use code to help me write my own but I struggled from the get go and missed a key opportunity to learn and understand the key concepts that I was trying to utilise and write.
 
-- Finally, I need to study local storage in more depth and implement it into this homework so that the user upon completion of the quiz is able to save their initials and score to a highscores table.
+- Finally, I need to study local storage in more depth and implement it into this homework so that the user upon completion of the quiz can save their initials and score to a highscores table.
 
 ## Screenshot of deployed application
 

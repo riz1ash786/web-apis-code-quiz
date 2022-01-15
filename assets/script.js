@@ -12,6 +12,7 @@ let currentQuestion = 0;
 let Score = 0;
 // let timerValue = 60;
 
+// questions set out in boolean format
 var questions = [
   {
     question: "Inside which HTML element do we put the JavaScript?",
@@ -112,7 +113,7 @@ var questions = [
     ],
   },
 ];
-// es6 functions for timer, call function added to eventlistener
+// es6 functions for timer, call function added to eventlistener but not utilised for homework, alernative time used line 144
 // var startTimer = () => {
 //   var timerTick = () => {
 //     timerValue -= 1;
@@ -129,6 +130,8 @@ var questions = [
 // set an empty array in local storage called highscore
 // when highscore  page is viewed get "highscore" array from local storage
 
+// use of es6 functions
+// start button attached to event listener will clear quizinfo and start buttona and display questions in block and start timer
 startButton.addEventListener("click", () => {
   quizInfo.style.display = "none";
   startButton.style.display = "none";
@@ -137,6 +140,7 @@ startButton.addEventListener("click", () => {
   renderNextQuestion(currentQuestion);
 });
 
+// timer set to 50 seconds displayes in seconds and when time is equal to 0 the time will clear and alert message to user
 function startTimer() {
   var sec = 50;
   var timer = setInterval(function () {
@@ -152,10 +156,11 @@ var clearQuestion = () => {
   quizQuestion.textContent = "";
   answersContainer.innerHTML = "";
 };
+// next question is rendered and shown on questions counter, as the quiz progresses the tally rises by 1
 var renderNextQuestion = (i) => {
   questionNumber.textContent = `Question ${i + 1}/10`;
   quizQuestion.textContent = questions[i].question;
-
+  // code used as example to function quiz, unable to implement es5 functions
   questions[i].answers.forEach((answer) => {
     var answer_text = document.createElement("p");
     answer_text.classList.add("answerBoxOptions");
@@ -165,7 +170,7 @@ var renderNextQuestion = (i) => {
     }
     answersContainer.append(answer_text);
   });
-
+  // displays reponses for questions and increases score for correct responses, will generate next question and finally score
   currentQuestion++;
   document.querySelectorAll(".answerBoxOptions").forEach((answer) =>
     answer.addEventListener("click", (event) => {
@@ -176,7 +181,7 @@ var renderNextQuestion = (i) => {
       if (document.querySelector(".answerBox").childElementCount === 0) {
         questionNumber.style.display = "none";
         quizQuestion.textContent = `Score: ${Score}`;
-
+        // reponses displayed dependent on user score of 6 and below and 7 and above
         if (Score <= 7) {
           resultResponse.textContent =
             "Oh dear, you've got some brushing up to do. Better luck next time!";
@@ -188,7 +193,7 @@ var renderNextQuestion = (i) => {
     })
   );
 };
-
+// start of local storage and unable to complete
 function renderHighscores() {
   clearScreen();
 
@@ -199,6 +204,7 @@ function renderHighscores() {
   }
 }
 
+// to do list
 // for loops
 // appending elements to html via js
 // es5 functions
